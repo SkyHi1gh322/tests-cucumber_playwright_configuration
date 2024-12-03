@@ -1,0 +1,7 @@
+{
+  "default": {
+    "paths": ["tests/cucumber/features"],
+    "parallel": 2,
+    "format": ["html:test-results/cucumber/cucumber-report.html"]
+  }
+}
