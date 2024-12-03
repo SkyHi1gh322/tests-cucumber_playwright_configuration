@@ -1,5 +1,7 @@
 {
   "default": {
+    "loader": ["ts-node/esm"],
+    "import": ["tests/cucumber/features/step_definitions/**/*.ts"],
     "paths": ["tests/cucumber/features"],
     "parallel": 2,
     "format": ["html:test-results/cucumber/cucumber-report.html"]

@@ -1,39 +1,36 @@
-# vue-project
+# vue-cucumber-playwright-example
 
-This template should help get you started developing with Vue 3 in Vite.
+Template which allows u to integrate tests in your application
 
-## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Configuration:
 
-## Type Support for `.vue` Imports in TS
+To work with Cucumber and Typescript both we need to have at least 18.19.0 version of NodeJS
+i recommend you to use NVM  to manage it.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### Packages
+**cucumber-html-reporter** - for creation of HTML reports
 
-## Customize configuration
+**playwright** - to work with playwright
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+**@cucumber/cucumber**
 
-## Project Setup
+**@playwright/test**
 
-```sh
-npm install
-```
+**ts-node** - this package is required if u want to write your tests in Typescript.
 
-### Compile and Hot-Reload for Development
+### Configuration files
+**playwright.config.ts** (root directory) - the main goal of this file is to define configuration of your tests,
 
-```sh
-npm run dev
-```
+like a output directory, input directory, stack trace, creation of video and screenshots
 
-### Type-Check, Compile and Minify for Production
+**cucumber.json** (root directory) - file for configuration of cucumber.js, there you can place additional loaders (for Typescript for example) and define output directory
 
-```sh
-npm run build
-```
 
-### Lint with [ESLint](https://eslint.org/)
+### Input
+ In case with **cucumber** you need place your tests (.spec files) in directory `/tests/cucumber/features/step_definitions` and  place your **Gherkin** templates in `/tests/cucumber/features`
 
-```sh
-npm run lint
-```
+In case with **playwright** if you have **mock pages** place them in `tests/playwright/pages` directory, for simple tests you should use `tests/playwright/tests`
+
+### Output
+ For output we have **test-result** directory in the root, and this directory also includes directories for every type of test (cucumber and playwright)

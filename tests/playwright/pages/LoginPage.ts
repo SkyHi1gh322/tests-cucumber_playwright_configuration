@@ -1,5 +1,7 @@
+import {Page} from "@playwright/test";
+
 export class LoginPage {
-  constructor(page) {
+  constructor(private page: Page) {
     this.page = page;
   }
 
@@ -7,7 +9,7 @@ export class LoginPage {
     await this.page.goto('http://localhost:3000/login');
   }
 
-  async login(login, password) {
+  async login(login: string, password: string) {
     await this.page.fill('#login', login);
     await this.page.fill('#password', password);
     await this.page.click('#loginButton');

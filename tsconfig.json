@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".", // root directory
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "./dist"
+  },
+  "include": ["tests/**/*.ts"]
+}

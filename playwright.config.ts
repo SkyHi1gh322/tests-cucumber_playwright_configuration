@@ -2,7 +2,8 @@ import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
   testDir: './tests/playwright/tests', // tests folder,
-  testMatch: '**/*.js',
+  testMatch: '**/*.ts',
+  outputDir: './test-results/playwright', // directory for output results
   use: {
     headless: false,
     trace: 'on', // stack trace for debug
